@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Christmas Deck – Camada Extra de Nevasca (Profundidade 3D)
+   ========================================================================== */
+
+body::before {
+  content: "";
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100vw;
+  height: 200vh;
+  pointer-events: none;
+  z-index: 99998;
+  background-image:
+    radial-gradient(6px 6px at 60px 90px, rgba(255,255,255,0.75), rgba(255,255,255,0)),
+    radial-gradient(5px 5px at 210px 260px, rgba(255,255,255,0.65), rgba(255,255,255,0)),
+    radial-gradient(7px 7px at 340px 120px, rgba(255,255,255,0.7), rgba(255,255,255,0)),
+    radial-gradient(5.5px 5.5px at 490px 310px, rgba(255,255,255,0.6), rgba(255,255,255,0)),
+    radial-gradient(6.5px 6.5px at 680px 180px, rgba(255,255,255,0.75), rgba(255,255,255,0)),
+    radial-gradient(5px 5px at 840px 70px, rgba(255,255,255,0.65), rgba(255,255,255,0));
+  background-size: 480px 480px;
+  animation: xmas-blizzard 11s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes xmas-blizzard {
+  0% { transform: translate3d(-15px, 0, 0); }
+  50% { transform: translate3d(15px, 25%, 0); }
+  100% { transform: translate3d(-15px, 50%, 0); }
+}

@@ -1,0 +1,31 @@
+/* ==========================================================================
+   Christmas Deck – Luzes de Fada Douradas no Topo (Header)
+   ========================================================================== */
+
+.header_Header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 10px;
+  pointer-events: none;
+  z-index: 100;
+  background-image:
+    radial-gradient(circle at 15px 5px, #fff6d1 0%, #f5c542 3.5px, rgba(245, 197, 66, 0.45) 6.5px, transparent 9px),
+    radial-gradient(circle at 45px 5px, #ffd700 0%, #e5a91a 3px, rgba(245, 197, 66, 0.35) 6px, transparent 9px);
+  background-size: 60px 10px;
+  background-repeat: repeat-x;
+  animation: xmas-gold-twinkle 2.6s ease-in-out infinite alternate;
+}
+
+@keyframes xmas-gold-twinkle {
+  0% {
+    opacity: 0.6;
+    filter: brightness(0.85) drop-shadow(0 0 4px rgba(245, 197, 66, 0.5));
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1.25) drop-shadow(0 0 9px rgba(255, 215, 0, 0.95));
+  }
+}

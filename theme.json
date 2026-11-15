@@ -1,0 +1,203 @@
+{
+  "name": "Christmas Deck",
+  "author": "Kraus",
+  "version": "v3.0.0",
+  "manifest_version": 9,
+  "target": "System-Wide",
+  "description": "A complete, modular Christmas & Winter Holiday theme for SteamOS Gaming Mode featuring selectable color palettes, 3D dual-layer snowfall, animated string lights, candy cane borders, themed virtual keyboard, and custom color pickers.",
+  "tabs": {
+    "all": [
+      "SP",
+      "QuickAccess",
+      "MainMenu",
+      "notificationtoasts.*"
+    ],
+    "sp": [
+      "SP"
+    ],
+    "menu": [
+      "MainMenu"
+    ],
+    "qam": [
+      "QuickAccess"
+    ],
+    "default": [
+      "all"
+    ]
+  },
+  "inject": {
+    "christmas.css": []
+  },
+  "patches": {
+    "Color Palette": {
+      "type": "dropdown",
+      "default": "Traditional Christmas (Pine & Ruby)",
+      "values": {
+        "Traditional Christmas (Pine & Ruby)": {},
+        "Santa's Velvet (Crimson & Gold)": {
+          "--xmas-red": ["#e61938"],
+          "--xmas-bright-red": ["#ff2446"],
+          "--xmas-dark-red": ["#6e0919"],
+          "--xmas-green": ["#4a0a16"],
+          "--xmas-mid-green": ["#731023"],
+          "--xmas-dark-green": ["#24040a"],
+          "--xmas-gold": ["#ffd700"],
+          "--xmas-switch-color": ["#e61938"],
+          "--xmas-row-bg": ["rgba(74, 10, 22, 0.55)"]
+        },
+        "Frozen Winter (Ice Blue & Silver)": {
+          "--xmas-red": ["#0088ff"],
+          "--xmas-bright-red": ["#29a3ff"],
+          "--xmas-dark-red": ["#004488"],
+          "--xmas-green": ["#0a233d"],
+          "--xmas-mid-green": ["#123b66"],
+          "--xmas-dark-green": ["#051321"],
+          "--xmas-gold": ["#a8e6ff"],
+          "--xmas-switch-color": ["#00a2ff"],
+          "--xmas-row-bg": ["rgba(10, 35, 61, 0.55)"],
+          "--xmas-red-glow": ["rgba(0, 162, 255, 0.85)"],
+          "--xmas-gold-glow": ["rgba(168, 230, 255, 0.75)"],
+          "--xmas-wallpaper": [
+            "radial-gradient(65% 55% at 12% 10%, rgba(0, 136, 255, 0.45), transparent 70%), radial-gradient(55% 45% at 88% 16%, rgba(168, 230, 255, 0.25), transparent 65%), radial-gradient(80% 70% at 50% 100%, rgba(18, 59, 102, 0.65), transparent 75%), linear-gradient(180deg, #0a233d 0%, #061524 52%, #030b14 100%)"
+          ]
+        },
+        "Gingerbread (Cinnamon & Gold)": {
+          "--xmas-red": ["#c95b1e"],
+          "--xmas-bright-red": ["#e36d29"],
+          "--xmas-dark-red": ["#6e2c09"],
+          "--xmas-green": ["#3b2010"],
+          "--xmas-mid-green": ["#59321a"],
+          "--xmas-dark-green": ["#1f1007"],
+          "--xmas-gold": ["#ffcc5c"],
+          "--xmas-switch-color": ["#d97224"],
+          "--xmas-row-bg": ["rgba(59, 32, 16, 0.55)"],
+          "--xmas-red-glow": ["rgba(227, 109, 41, 0.85)"],
+          "--xmas-wallpaper": [
+            "radial-gradient(65% 55% at 12% 10%, rgba(201, 91, 30, 0.45), transparent 70%), radial-gradient(55% 45% at 88% 16%, rgba(255, 204, 92, 0.25), transparent 65%), radial-gradient(80% 70% at 50% 100%, rgba(89, 50, 26, 0.65), transparent 75%), linear-gradient(180deg, #3b2010 0%, #241208 52%, #140904 100%)"
+          ]
+        },
+        "Custom (Color Picker)": {}
+      },
+      "components": [
+        {
+          "name": "Primary Accent Color (Focus)",
+          "type": "color-picker",
+          "on": "Custom (Color Picker)",
+          "default": "#c41e3a",
+          "css_variable": "xmas-custom-accent",
+          "tabs": []
+        },
+        {
+          "name": "Secondary Color (Panels & Background)",
+          "type": "color-picker",
+          "on": "Custom (Color Picker)",
+          "default": "#0f3d29",
+          "css_variable": "xmas-custom-secondary",
+          "tabs": []
+        },
+        {
+          "name": "Border & Glow Color (Gold)",
+          "type": "color-picker",
+          "on": "Custom (Color Picker)",
+          "default": "#f5c542",
+          "css_variable": "xmas-custom-gold",
+          "tabs": []
+        },
+        {
+          "name": "Active Toggle Switch Color",
+          "type": "color-picker",
+          "on": "Custom (Color Picker)",
+          "default": "#1f8a52",
+          "css_variable": "xmas-custom-switch",
+          "tabs": []
+        }
+      ]
+    },
+    "Snowfall Intensity": {
+      "type": "slider",
+      "default": "Blizzard (3D Dual Layer)",
+      "values": {
+        "Off": {},
+        "Gentle Snow": {
+          "css/snow-normal.css": []
+        },
+        "Blizzard (3D Dual Layer)": {
+          "css/snow-normal.css": [],
+          "css/snow-blizzard.css": []
+        },
+        "Magic Golden Snow": {
+          "css/snow-golden.css": []
+        }
+      }
+    },
+    "Header Christmas Lights": {
+      "type": "dropdown",
+      "default": "Animated Colorful Lights",
+      "values": {
+        "Animated Colorful Lights": {
+          "css/lights-colorful.css": ["sp"]
+        },
+        "Warm Golden Fairy Lights": {
+          "css/lights-gold.css": ["sp"]
+        },
+        "Off": {}
+      }
+    },
+    "Game Card Focus Style": {
+      "type": "dropdown",
+      "default": "Festive Glow + Zoom",
+      "values": {
+        "Festive Glow + Zoom": {},
+        "Candy Cane Border": {
+          "css/card-candycane.css": ["sp"]
+        },
+        "Subtle (No Zoom)": {
+          "--xmas-card-scale": ["1"]
+        }
+      }
+    },
+    "Corner Roundness": {
+      "type": "slider",
+      "default": "Default (12px)",
+      "values": {
+        "Sharp (6px)": {
+          "--xmas-radius": ["6px"],
+          "--xmas-card-radius": ["6px"]
+        },
+        "Default (12px)": {},
+        "Rounded (18px)": {
+          "--xmas-radius": ["18px"],
+          "--xmas-card-radius": ["16px"]
+        },
+        "Pill (24px)": {
+          "--xmas-radius": ["24px"],
+          "--xmas-card-radius": ["20px"]
+        }
+      }
+    },
+    "Footer Style": {
+      "type": "dropdown",
+      "default": "Festive Full Bar",
+      "values": {
+        "Festive Full Bar": {},
+        "Minimal Transparent": {
+          "css/footer-minimal.css": ["sp"]
+        },
+        "Hidden": {
+          "css/footer-minimal.css": ["sp"],
+          "css/footer-hidden.css": ["sp"]
+        }
+      }
+    },
+    "Christmas Virtual Keyboard": {
+      "type": "checkbox",
+      "default": "Yes",
+      "values": {
+        "No": {},
+        "Yes": {
+          "css/keyboard.css": []
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+/* ==========================================================================
+   Christmas Deck – Ocultar Rodapé
+   ========================================================================== */
+
+.footer_BasicFooter:not(.footer_QuickAccessFooter) {
+  display: none !important;
+}

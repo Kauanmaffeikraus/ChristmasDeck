@@ -1,0 +1,9 @@
+/* ==========================================================================
+   Christmas Deck – Rodapé Minimalista Transparente
+   ========================================================================== */
+
+.footer_BasicFooter:not(.footer_QuickAccessFooter) {
+  background: linear-gradient(0deg, rgba(7, 25, 17, 0.75) 0%, rgba(7, 25, 17, 0) 100%) !important;
+  border-top: none !important;
+  box-shadow: none !important;
+}
