@@ -44,13 +44,15 @@
 .gamepadsearch_GamepadSearch,
 .downloads_DownloadsPage,
 .gamepadpagedsettings_PagedSettingsDialog,
-.gamepadpage_GamepadPage.gamepadpage_DialogBackground {
+.gamepadpage_GamepadPage.gamepadpage_DialogBackground,
+.BasicUI .basicappdetailssectionstyler_AppDetailsRoot {
   background: var(--xmas-wallpaper) !important;
   background-color: var(--xmas-wallpaper-base) !important;
 }
 
 .gamepadhome_TabbedContent,
-.gamepadpagedsettings_PagedSettingDialog_ContentColumn {
+.gamepadpagedsettings_PagedSettingDialog_ContentColumn,
+.BasicUI .appdetailssection_AppDetailsSectionContainer {
   background: transparent !important;
 }
 
@@ -406,7 +408,7 @@ button.gamepaddialog_Button.DialogButton:enabled.gpfocus.Primary {
 }
 
 /* ==========================================================================
-   8. TOAST NOTIFICATIONS & CONTEXT MENUS
+   8. TOAST NOTIFICATIONS & CONTEXT MENUS (Popups, Power Menu, Right Click)
    ========================================================================== */
 .shorttemplates_ShortTemplate {
   background: linear-gradient(135deg, var(--xmas-green) 0%, var(--xmas-dark-red) 100%) !important;
@@ -415,17 +417,128 @@ button.gamepaddialog_Button.DialogButton:enabled.gpfocus.Primary {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 12px var(--xmas-gold-soft) !important;
 }
 
+/* Popups de Menu de Opções e Menu Desligar */
 .gamepadcontextmenu_contextMenuContents,
 .gamepadcontextmenu_contextMenu {
   background: var(--xmas-panel-gradient) !important;
-  border: 1.5px solid var(--xmas-gold) !important;
+  border: 2px solid var(--xmas-gold) !important;
   border-radius: var(--xmas-radius) !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.85), 0 0 16px var(--xmas-gold-soft) !important;
+  padding: 8px !important;
+}
+
+.gamepadcontextmenu_BasicContextMenuHeader,
+.gamepadcontextmenu_contextMenuHeader,
+.gamepadcontextmenu_MenuSectionHeader {
+  color: var(--xmas-gold) !important;
+  font-weight: 700 !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6) !important;
+  padding: 8px 12px !important;
+}
+
+.gamepadcontextmenu_contextMenuItem {
+  background: transparent !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  margin: 2px 4px !important;
+  padding: 10px 14px !important;
+  transition: transform 0.15s ease, background 0.12s ease !important;
+}
+
+.gamepadcontextmenu_contextMenuItem:hover,
+.gamepadcontextmenu_contextMenuItem.gamepadcontextmenu_Selected {
+  background: rgba(22, 86, 59, 0.45) !important;
+  color: var(--xmas-gold) !important;
 }
 
 .gamepadcontextmenu_contextMenuItem.gamepadcontextmenu_Focused,
 .gamepadcontextmenu_contextMenuItem.gamepadcontextmenu_active {
   background: var(--xmas-focus-gradient) !important;
   color: #ffffff !important;
-  border: 1px solid var(--xmas-gold) !important;
-  border-radius: 10px !important;
+  border: 1.5px solid var(--xmas-gold) !important;
+  box-shadow: 0 0 16px var(--xmas-red-glow), 0 0 6px var(--xmas-gold-glow) !important;
+  font-weight: 700 !important;
+  transform: scale(1.02);
+}
+
+.gamepadcontextmenu_ContextMenuSeparator {
+  background: var(--xmas-gold-soft) !important;
+  height: 1px !important;
+  margin: 6px 10px !important;
+}
+
+/* Modais de Diálogo (ex: Confirmação de exclusão / alertas) */
+.gamepaddialog_ModalPosition > .gamepaddialog_GamepadDialogContent {
+  background: var(--xmas-panel-gradient) !important;
+  border: 2px solid var(--xmas-gold) !important;
+  border-radius: var(--xmas-radius) !important;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.85) !important;
+}
+
+/* ==========================================================================
+   9. PÁGINA DO JOGO (App Details, Barra de Estatísticas & Conquistas)
+   ========================================================================== */
+
+/* Barra de informações ("Tamanho instalado", "Última vez jogado", "Jogados") */
+.appdetailsplaysection_PlayBar,
+.appdetailsplaysection_DetailsSection,
+.appdetailsplaysection_StickyHeader,
+.BasicUI .basicappdetailssectionstyler_PlaySection {
+  background: rgba(14, 52, 35, 0.72) !important;
+  border-top: 1.5px solid var(--xmas-gold-soft) !important;
+  border-bottom: 1.5px solid var(--xmas-gold-soft) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+.BasicUI .appdetailsplaysection_PlayBarLabel {
+  color: var(--xmas-gold) !important;
+  font-weight: 600 !important;
+}
+
+.BasicUI .appdetailsplaysection_PlayBarDetailLabel,
+.BasicUI .appdetailsplaysection_LastPlayed .appdetailsplaysection_LastPlayedInfo {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+/* Botões circulares (Configurações do Controle, Engrenagem, Lixeira/Desinstalar) */
+.BasicUI .appdetailsplaysection_MenuButton {
+  background-color: rgba(22, 86, 59, 0.75) !important;
+  border: 1px solid var(--xmas-gold-soft) !important;
+  border-radius: 50% !important;
+}
+
+.BasicUI .appdetailsplaysection_MenuButton.Focusable:focus,
+.BasicUI .appdetailsplaysection_MenuButton.gpfocus {
+  background: var(--xmas-focus-gradient) !important;
+  border: 1.5px solid var(--xmas-gold) !important;
+  box-shadow: 0 0 14px var(--xmas-red-glow) !important;
+}
+
+/* Painéis de conteúdo na página do jogo */
+.BasicUI .appdetailssection_AppDetailsSectionContainer.appdetailssection_RightColumnSection,
+.BasicUI .appdetailssection_Highlight {
+  background: rgba(14, 52, 35, 0.45) !important;
+  border: 1px solid var(--xmas-gold-soft) !important;
+  border-radius: var(--xmas-radius) !important;
+}
+
+/* Barra de progresso das Conquistas (substituindo o azul padrão por vermelho/verde/ouro) */
+.appdetailsachievementssection_SingleAchievementProgressBar,
+.appdetailsachievementssection_SingleAchievementProgressContainer,
+.achievementslist_ProgressBar,
+.achievementslist_ProgressContainer,
+.achievementspage_ProgressBar,
+.achievementspage_ProgressContainer {
+  background: rgba(8, 30, 20, 0.85) !important;
+  border: 1px solid var(--xmas-gold-soft) !important;
+  border-radius: 999px !important;
+}
+
+.appdetailsachievementssection_SingleAchievementProgressBar > div,
+.appdetailsachievementssection_SingleAchievementProgressBar [class*="ProgressFill"],
+.achievementslist_ProgressFill,
+.achievementspage_ProgressFill {
+  background: linear-gradient(90deg, #1f8a52 0%, #e62244 50%, var(--xmas-gold) 100%) !important;
+  border-radius: 999px !important;
 }
